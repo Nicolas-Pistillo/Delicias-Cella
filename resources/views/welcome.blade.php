@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="{{ asset('css/frontend/main-page.css') }}">
     <title>@yield('title', 'Delicias Cella')</title>
 </head>
 <body class="bg-gray-50">
@@ -38,34 +39,26 @@
     </nav>
 
     <main class="mt-16">
-        
-        <style>
-            * { box-sizing: border-box; }
-
-            .carousel-cell {
-                width: 66%;
-                height: 300px;
-                background: #8C8;
-                counter-increment: carousel-cell;
-            }
-
-            .carousel-cell:before {
-                display: block;
-                text-align: center;
-                content: counter(carousel-cell);
-                line-height: 200px;
-                font-size: 80px;
-                color: white;
-            }
-        </style>
 
         <div class="carousel" data-flickity='{ "wrapAround": true, "contain": true }'>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-      </div>
+
+            <div class="carousel-cell">
+                <img src="{{ asset('img/alfajores.jpg') }}" class="carousel-img">
+            </div>
+
+            <div class="carousel-cell">
+                <img src="{{ asset('img/brownies.jpg') }}" class="carousel-img">
+            </div>
+
+            <div class="carousel-cell">
+                <img src="{{ asset('img/pastafrola.jpg') }}" class="carousel-img">
+            </div>
+
+            <div class="carousel-cell">
+                <img src="{{ asset('img/pasteleria.jpg') }}" class="carousel-img">
+            </div>
+
+        </div>
 
     </main>
 
