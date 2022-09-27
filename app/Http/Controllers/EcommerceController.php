@@ -11,6 +11,6 @@ class EcommerceController extends Controller
     {
         $data = Http::get('https://fakestoreapi.com/products');
         
-        return view('welcome', ['products' => $data->object()]);
+        return view('frontend.catalog', ['products' => $data->object()]);
     }
 }
