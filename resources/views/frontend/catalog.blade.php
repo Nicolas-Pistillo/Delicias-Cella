@@ -34,12 +34,12 @@
 
         @foreach ($products as $product)
             
-        <div class="w-80 shadow-lg m-4 bg-gray-100 rounded-lg overflow-hidden">
+        <div class="w-80 shadow-xl m-4 bg-white rounded-lg overflow-hidden">
 
             <img src="{{ $product->image }}" alt="Foto Prueba"
-            class="w-full h-52 object-cover">
+            class="w-full h-40 object-contain py-3 border-b-2">
 
-            <div class="flex flex-col justify-between items-center">
+            <div class="flex h-52 flex-col justify-between items-center">
 
                 <div class="pt-6 px-3">
 
