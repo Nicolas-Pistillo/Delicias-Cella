@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     <title>@yield('title', 'Delicias Cella')</title>
 </head>
-<body class="bg-gray-200">
+<body class="bg-gray-200 relative">
 
     <nav class="fixed flex-between inset-0 h-16 bg-blue-400 text-white shadow-lg
     py-3 px-6 z-10">
@@ -68,41 +68,51 @@
         </div>
 
         <h3 class="mb-8 uppercase font-semibold text-center text-2xl" 
-        style="letter-spacing: 2px">
-            Productos
-        </h3>
+        style="letter-spacing: 2px">Productos</h3>
 
         <section class="products flex-center flex-wrap px-8">
 
-            @for ($i = 0; $i < 8; $i++)
+            @foreach ($products as $product)
                 
-                <div class="w-80 h-96 shadow-lg m-4 bg-gray-100 rounded-lg overflow-hidden">
+            <div class="w-80 shadow-lg m-4 bg-gray-100 rounded-lg overflow-hidden">
 
-                    <img src="{{ asset('img/logo.png') }}" alt="Foto Prueba"
-                    class="w-full h-52 object-cover">
+                <img src="{{ $product->image }}" alt="Foto Prueba"
+                class="w-full h-52 object-cover">
 
-                    <div class="px-3 py-6 h-44 flex flex-col justify-between items-center">
+                <div class="flex flex-col justify-between items-center">
 
-                        <div>
-                            <h4 class="font-semibold mb-3">Nombre del producto</h4>
+                    <div class="pt-6 px-3">
 
-                            <p class="font-light text-sm">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat placeat, a explicabo eligendi voluptatibus.
-                            </p>
-    
-                        </div>
+                        <h4 class="font-semibold pb-1">{{ $product->category }}</h4>
 
-                        <a href="#">Encargar</a>
-                        
+                        <b class="text-green-500 pb-2">${{ $product->price }}</b>
+
+                        <p class="font-light text-sm pb-2">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat placeat, a explicabo eligendi voluptatibus.
+                        </p>
+
                     </div>
 
+                    <a href="#" class="block w-full py-2 px-4 rounded-b-lg text-center 
+                    text-white transition duration-300 font-semibold
+                    bg-orange-800 hover:bg-orange-700">
+                        Encargar
+                    </a>
+                    
                 </div>
 
-            @endfor
+            </div>
+
+            @endforeach
 
         </section>
 
     </main>
+
+    <a href="#">
+        <img src="{{ asset('img/whatssap-icon.png') }}" alt="Whatssap"
+        class="w-14 h-14 fixed bottom-4 right-4 cursor-pointer">
+    </a>
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
